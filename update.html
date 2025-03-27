@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dobu Martial Arts - Membership Plans</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" 
+        integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMfXbM7SXUIzYd3IxUjYclGecGk4JJ/Jq3cEkA" 
+        crossorigin="anonymous">   <!-- Font Awesome -->
+  <link rel="stylesheet" href="css/style.css">   <!-- External CSS -->
+  
+  <style>
+
+    
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/fitness.webp") no-repeat center center;
+    background-size: cover;
+    opacity: 0.9; /* قيمة الشفافية، يمكنك تعديلها حسب رغبتك */
+    z-index: -1;
+    }
+  /* Header */
+  header {
+  position: relative;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF6600;
+  text-align: center;
+  z-index: 1;
+  }
+
+  header h1 { font-size: 5rem; animation: fadeInDown 1s ease-out; }
+  @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
+   
+  /* Container */
+  .container {
+  position: relative;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 40px auto;
+  background: rgba(255,255,255,0.8);
+  border-radius: 8px;
+  z-index: 1;
+  }
+
+  h2 { color: #000; text-align: center; margin-bottom: 20px; }
+
+  p { color: #333; line-height: 1.6; margin-bottom: 15px; }
+
+  .excerpt { margin-bottom: 30px; }
+
+/* Pricing Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+}
+th { background-color: #FF6600; color: #fff; }
+tr:nth-child(even) { background-color: #f9f9f9; }
+
+/* Login/Register Forms */
+.toggle-buttons { text-align: center; margin-bottom: 20px; }
+.toggle-buttons button {
+  background-color: #FF6600;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+.toggle-buttons button:hover { background-color: #e65c00; }
+.form-container {
+  background-color: #f5f5f5;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+form label { display: block; margin-bottom: 5px; font-weight: bold; }
+form input, form select { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ddd; border-radius: 4px; }
+form button { width: 100%; padding: 10px; background-color: #FF6600; border: none; color: #fff; font-size: 1.1rem; cursor: pointer; border-radius: 4px; transition: background-color 0.3s; }
+form button:hover { background-color: #e65c00; }
+   
+   
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Manage Your Membership</h1>
+  </header>
+  
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="membership.html" class="active">Membership</a>
+    <a href="courses.html">Courses</a>
+    <a href="about.html">About</a>
+    <a href="login.html" class="login">Login/Register</a>
+  </nav>
+  
+  <div class="container">
+    <h2>My Membership</h2>
+    <form id="membershipForm">
+      <label for="fullName">Full Name</label>
+      <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+      
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required placeholder="Enter your email">
+      
+      <label for="phone">Phone Number</label>
+      <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+      
+      <label for="membershipType">Membership Type</label>
+      <select id="membershipType" name="membershipType" required>
+        <option value="">-- Select Membership --</option>
+        <option value="basic">Basic (1 Martial Art – 2 sessions per week)</option>
+        <option value="intermediate">Intermediate (1 Martial Art – 3 sessions per week)</option>
+        <option value="advanced">Advanced (Any 2 Martial Arts – 5 sessions per week)</option>
+        <option value="elite">Elite (Unlimited Classes)</option>
+        <option value="junior">Junior Membership (Kids Courses)</option>
+      </select>
+      
+      <label for="address">Address</label>
+      <input type="text" id="address" name="address" placeholder="Enter your address">
+      
+      <button type="submit">Update or Join Membership</button>
+    </form>
+    <div class="info">
+      <p>After creating your account, you can update additional details and manage your membership options.</p>
+    </div>
+  </div>
+  
+  <footer>
+    &copy; 2025 Yousef Al-Thagbani. All rights reserved.
+  </footer>
+  
+<script src="js/script.js"></script>   <!-- External JS -->
+
+</body>
+</html>

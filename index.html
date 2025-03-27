@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMfXbM7SXUIzYd3IxUjYclGecGk4JJ/Jq3cEkA" crossorigin="anonymous">
+  <meta charset="UTF-8">
+  <title>Dobu Martial Arts - Home</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">   <!-- External CSS -->
+  <style>
+  
+    /* فيديو الخلفية */
+    #bgVideo {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+      min-width: 100%; 
+      min-height: 100%;
+      z-index: -2;
+      opacity: 0.9; /* شفافية الفيديو */
+    }
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.3);
+      z-index: -1;
+    }
+
+    /* Header */
+    header {
+      position: relative;
+      height: 250px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FF6600;
+      text-align: center;
+      z-index: 1;
+    }
+    header h1 {
+      font-size: 5rem;
+      animation: fadeInDown 1s ease-out;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+
+    .container {
+      position: relative;
+      padding: 40px;
+      max-width: 1200px;
+      margin: 40px auto;
+      background: rgba(255,255,255,0.8); /* خلفية شفافة للنص */
+      border-radius: 8px;
+      z-index: 1;
+    }
+    
+    h2 { 
+      color: #000; 
+      text-align: center; 
+      margin-bottom: 20px; 
+    }
+    
+    p { 
+      color: #333; 
+      line-height: 1.6; 
+      margin-bottom: 15px; 
+    }
+    .excerpt { margin-bottom: 30px; }
+    
+    /* Pricing Table */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    th, td {
+      border: 1px solid #ddd;
+      padding: 15px;
+      text-align: center;
+    }
+    th { background-color: #FF6600; color: #fff; }
+    tr:nth-child(even) { background-color: #f9f9f9; }
+
+    .previews {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 40px;
+  justify-content: center;
+}
+.preview {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  flex: 1 1 300px;
+  max-width: 350px;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.preview h3 {
+  color: #FF6600;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+.preview p {
+  color: #333;
+  margin-bottom: 15px;
+  font-size: 1rem;
+}
+
+.choose-plan {
+      display: block;
+      width: 200px; 
+      margin: 0 auto;
+      padding: 12px 24px;
+      background-color: #FF6600;
+      color: #fff;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+.choose-plan:hover {
+    background-color: #070706;
+    color: #FF6600;
+    border-radius: 8px;
+}
+
+.read-more-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #FF6600;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+.read-more-btn:hover {
+  background-color: #070706;
+    color: #FF6600;
+    border-radius: 8px;
+}  
+
+  </style>
+</head>
+<body>
+  <!-- فيديو الخلفية -->
+  <video autoplay muted loop id="bgVideo">
+    <source src="videos/home.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+  <div class="overlay"></div>
+  
+  <header>
+    <h1>Dobu Martial Arts</h1>
+  </header>
+
+  <nav>
+    <a href="index.html" class="active">Home</a>
+    <a href="membership.html" >Membership</a>
+    <a href="courses.html">Courses</a>
+    <a href="about.html">About</a>
+    <a href="login.html" class="login">Login/Register</a>
+  </nav>
+
+  <div class="container">
+    <h2>Welcome to Dobu Martial Arts</h2>
+    <div class="excerpt">
+      <p>Discover our premier training center dedicated to martial arts and fitness. We offer comprehensive courses for all levels—from mastering Karate, Jiu-Jitsu, and Judo to specialized fitness training.</p>
+    </div>
+    <div class="excerpt">
+      <p>Our state-of-the-art facilities include a large matted martial arts area, a fully-equipped gym, sauna, steam room, and top-notch changing facilities. Experience an environment that emphasizes discipline, respect, and personal growth.</p>
+    </div>
+    <div class="excerpt">
+      <p>Membership options range from Basic (2 sessions per week) to Elite (Unlimited classes), with additional specialist programs such as our Six-week Beginners’ Self-Defence Course, use of the fitness room, and personal fitness training.</p>
+    </div>
+    
+    <!-- جدول الأسعار -->
+    <h2>Membership & Prices</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Membership</th>
+          <th>Description</th>
+          <th>Price (GBP)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Basic</td>
+          <td>1 Martial Art – 2 sessions per week</td>
+          <td>£25.00</td>
+        </tr>
+        <tr>
+          <td>Intermediate</td>
+          <td>1 Martial Art – 3 sessions per week</td>
+          <td>£35.00</td>
+        </tr>
+        <tr>
+          <td>Advanced</td>
+          <td>Any 2 Martial Arts – 5 sessions per week</td>
+          <td>£45.00</td>
+        </tr>
+        <tr>
+          <td>Elite</td>
+          <td>Unlimited Classes</td>
+          <td>£60.00</td>
+        </tr>
+        <tr>
+          <td>Private Tuition</td>
+          <td>Per Hour</td>
+          <td>£15.00</td>
+        </tr>
+        <tr>
+          <td>Junior Membership</td>
+          <td>All Kids Martial Arts sessions</td>
+          <td>£25.00</td>
+        </tr>
+      </tbody>
+    </table>
+    <a href="membership.html" class="choose-plan">Choose a Plan</a>
+  </div>
+
+  <div class="previews">
+    <div class="preview">
+      <h3>Membership</h3>
+      <p>Learn about our flexible membership options designed for every level and age.</p>
+      <a href="membership.html" class="read-more-btn">Read More</a>
+    </div>
+    <div class="preview">
+      <h3>Courses</h3>
+      <p>Explore our diverse courses ranging from martial arts to specialized fitness training.</p>
+      <a href="courses.html" class="read-more-btn">Read More</a>
+    </div>
+    <div class="preview">
+      <h3>About</h3>
+      <p>Discover our story, our facilities, and meet our experienced instructors.</p>
+      <a href="about.html" class="read-more-btn">Read More</a>
+    </div>
+  </div>
+
+  <div class="social-features">
+    <h3>Join Our Community</h3>
+    <p>Follow us on social media and join our forum to connect with other members.</p>
+    <ul class="social-links">
+      <li><a href="https://facebook.com/yousef2025dubo" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+      <li><a href="https://twitter.com/yousef2025dubo" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
+      <li><a href="https://instagram.com/yousef2025dubo" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
+      <li><a href="https://forum.yousef2025dubo.com" target="_blank"><i class="fas fa-comments"></i> Forum</a></li>
+    </ul>
+  </div>
+  
+  <footer>
+    &copy; 2025 Yousef Al-Thagbani. All rights reserved.
+  </footer>
+</body>
+</html>
+
+
+
