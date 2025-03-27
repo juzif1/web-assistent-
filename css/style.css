@@ -92,8 +92,12 @@ nav a.login { margin-left: auto; margin-right: 0; }
   transition: color 0.3s;
   font-size: 1.2rem;
 }
-.social-links li a:hover { color: #e65c00; }
-.social-links li a i { margin-right: 5px; }
+.social-links li a:hover { 
+  color: #e65c00; 
+}
+.social-links li a i { 
+  margin-right: 5px; 
+}
 
 
 /* Responsive adjustments */
