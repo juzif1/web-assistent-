@@ -18,44 +18,50 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("images/fitness.webp") no-repeat center center;
+    background: url("images/join2.png") no-repeat center center;
     background-size: cover;
-    opacity: 0.9; /* قيمة الشفافية، يمكنك تعديلها حسب رغبتك */
     z-index: -1;
     }
     
-   /* Header */
-   header {
-    position: relative;
-    height: 250px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #FF6600;
-    text-align: center;
-    z-index: 1;
-   }
 
-   header h1 { 
-     font-size: 5rem; animation: fadeInDown 1s ease-out; 
-   }
-   
   @keyframes fadeInDown { from { opacity: 0; transform: translateY(-30px); } to { opacity: 1; transform: translateY(0); } }
    
    /* Container */
    .container {
-    position: relative;
     padding: 40px;
-    max-width: 1200px;
-    margin: 40px auto;
-    background: rgba(255,255,255,0.8);
+    width: 90%;
+    max-width: 700px;
+    margin-top: 60px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 8px;
+    position: relative;
     z-index: 1;
+
    }
 
-   h2 { color: #000; text-align: center; margin-bottom: 20px; }
+   .form-container {
+   background-color: #f5f5f5;
+   padding: 20px;
+   border-radius: 8px;
+   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+  
 
-   p { color: #333; line-height: 1.6; margin-bottom: 15px; }
+   h2 { 
+    color: #ffffff; 
+    text-align: center; 
+    margin-bottom: 20px; 
+  }
+
+   p { 
+    margin-top: 20px;
+    color: #ffffff; 
+    line-height: 1.6; 
+    margin-bottom: 15px; 
+   }
 
    .excerpt {
      margin-bottom: 30px; 
@@ -102,17 +108,13 @@
   }
   
   .toggle-buttons button:hover { 
-    background-color: #e65c00; 
+    background-color: #070706;
+    color: #FF6600;
   }
   
-  .form-container {
-   background-color: #f5f5f5;
-   padding: 20px;
-   border-radius: 8px;
-   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  }
-  
-  form label { display: block; 
+  form label { 
+    display: block; 
+    color: #ffffff;
   margin-bottom: 5px; 
   font-weight: bold; 
   }
@@ -121,7 +123,7 @@
     width: 100%; 
     padding: 10px; 
     margin-bottom: 15px; 
-    border: 1px solid #ddd; 
+    border: 1px solid #ff6600; 
     border-radius: 4px; 
   }
   
@@ -139,7 +141,8 @@
   }
   
   form button:hover { 
-    background-color: #e65c00; 
+    background-color: #070706;
+    color: #FF6600; 
   }
    
   </style>
@@ -147,7 +150,6 @@
 
 <body>
   <header>
-    <h1>Manage Your Membership</h1>
   </header>
   
   <nav>

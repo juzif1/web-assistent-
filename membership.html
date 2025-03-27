@@ -22,37 +22,6 @@
      opacity: 0.9; /* قيمة الشفافية، يمكنك تعديلها حسب رغبتك */
      z-index: -1;
     }
-
-    body {
-      display: flex;
-      flex-direction: column;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #fff;
-      color: #fff; /* نص بلون أبيض افتراضياً */
-    }
-
-    header {
-      position: relative;
-      height: 250px;
-    }
-
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.5);
-    }
-
-    header h1 {
-      position: relative;
-      font-size: 3rem;
-      color: #FF6600;
-      text-align: center;
-      padding-top: 80px;
-      animation: fadeInDown 1s ease-out;
-      z-index: 1;
-    }
     
     @keyframes fadeInDown {
       from { opacity: 0; transform: translateY(-30px); }
