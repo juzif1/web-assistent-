@@ -11,22 +11,22 @@
   <style>
 
     body::before {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("images/fitness.webp") no-repeat center center;
-    background-size: cover;
-    opacity: 0.9; /* قيمة الشفافية، يمكنك تعديلها حسب رغبتك */
-    z-index: -1;
+     content: "";
+     position: fixed;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("images/fitness.webp") no-repeat center center;
+     background-size: cover;
+     opacity: 0.9; /* قيمة الشفافية، يمكنك تعديلها حسب رغبتك */
+     z-index: -1;
     }
 
     body {
-        display: flex;
-        flex-direction: column;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #fff;
       color: #fff; /* نص بلون أبيض افتراضياً */
     }
@@ -66,12 +66,14 @@
       padding: 20px;
       flex: 1;
     }
+    
     .plans {
       display: flex;
       flex-wrap: wrap;
       gap: 20px;
       justify-content: center;
     }
+    
     /* تنسيق البطاقات */
     .plan-card {
       display: flex;
@@ -116,7 +118,7 @@
     }
     
     .plan-info {
-        margin-bottom: 15px;
+      margin-bottom: 15px;
       line-height: 1.6;
       color: #000000; /* نص رمادي فاتح */
     }
@@ -143,10 +145,9 @@
       border-radius: 8px;
     }
 
-
-
   </style>
 </head>
+
 <body>
   <header>
     <h1>Membership Plans</h1>
