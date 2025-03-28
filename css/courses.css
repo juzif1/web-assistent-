@@ -1,0 +1,139 @@
+:root {
+  --page-bg: url("../images/fitness2.png");
+  --page-bg-opacity: 0.9;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    var(--page-bg) no-repeat center center;
+  opacity: var(--page-bg-opacity);
+  background-size: cover;
+  transition: opacity 1s ease; /* انتقال ناعم */
+  z-index: -1;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.container {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* تنسيق عنصر الكورس */
+.course {
+  position: relative;
+  background: rgba(255, 255, 255, 0.8);
+  margin-bottom: 30px;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s;
+  padding: 20px;
+  border: 5x solid #000000; /* إطار برتقالي */
+}
+
+.course:hover {
+  transform: scale(1.02);
+}
+
+/* الخلفية باستخدام pseudo-element لتغطية كامل العنصر */
+.course::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-url) no-repeat center center;
+  background-size: cover;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* النصوص فوق الخلفية */
+.course-summary, .course-details {
+  position: relative;
+  z-index: 1;
+}
+
+/* ملخص الكورس: محاذاة لليسار مع حواف بيضاء */
+.course-summary {
+  padding: 20px;
+  text-align: left;
+}
+
+.course-summary h2 {
+  color: #000;
+  margin-bottom: 10px;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.course-summary p {
+  color: #333;
+  line-height: 1.6;
+  font-weight: 550;
+}
+
+/* تفاصيل الكورس: تبقى مركزة مع حواف بيضاء */
+.course-details {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: none;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.course-details p {
+  margin-bottom: 15px;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}
+
+.course-details p strong {
+  color: #000;
+}
+
+.register-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #ff6600;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+/* تنسيق خاص لقسم كورسات الأطفال */
+.kids-course {
+  border: 1px dashed #ff6600;
+  margin-top: 10px;
+  padding: 10px;
+  border-radius: 4px;
+  text-align: center;
+}
+
+.kids-course h3 {
+  margin-bottom: 10px;
+  color: #ff6600;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff,
+    1px 1px 0 #fff;
+}

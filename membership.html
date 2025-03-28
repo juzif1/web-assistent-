@@ -1,226 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMfXbM7SXUIzYd3IxUjYclGecGk4JJ/Jq3cEkA" crossorigin="anonymous">
-  <meta charset="UTF-8">
-  <meta charset="UTF-8">
-  <title>Dobu Martial Arts - Membership Plans</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">   <!-- External CSS -->
-  
-  <style>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMfXbM7SXUIzYd3IxUjYclGecGk4JJ/Jq3cEkA"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <meta charset="UTF-8" />
+    <title>Dobu Martial Arts - Membership Plans</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- External CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/membership.css" />
+  </head>
 
-    body::before {
-     content: "";
-     position: fixed;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("images/fitness2.png") no-repeat center center;
-     background-size: cover;
-     opacity: 0.9; /* قيمة الشفافية، يمكنك تعديلها حسب رغبتك */
-     z-index: -1;
-    }
-    
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    /* الحاوية الرئيسية للبطاقات */
-    .container {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 20px;
-      flex: 1;
-    }
-    
-    .plans {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 20px;
-      justify-content: center;
-    }
-    
-    /* تنسيق البطاقات */
-    .plan-card {
-      display: flex;
-      flex-direction: column; /* لجعل العناصر تصطف عمودياً */
-      justify-content: space-between; /* لضمان توزيع العناصر بين الأعلى والأسفل */
-      background: rgba(255,255,255,0.8); /* خلفية سوداء */
-      border: 2px solid #8f8f8f; /* إطار برتقالي */
-      border-radius: 8px;
-      flex: 1 1 300px; /* يسمح بعرض 3 بطاقات تقريباً في الصف */
-      min-width: 250px; /* أصغر عرض للبطاقة */
-      max-width: 350px; /* أكبر عرض للبطاقة */
-      text-align: center;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s;
-    }
+  <body>
+    <header>
+      <h1>Membership Plans</h1>
+    </header>
 
-    .plan-card:hover {
-      transform: scale(1.03);
-    }
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="membership.html" class="active">Membership</a>
+      <a href="courses.html">Courses</a>
+      <a href="about.html">About</a>
+      <a href="login.html" class="login">Login/Register</a>
+    </nav>
 
-    .update-card {
-      flex-direction: column; /* لجعل العناصر تصطف عمودياً */
-      justify-content: space-between; /* لضمان توزيع العناصر بين الأعلى والأسفل */
-      background: rgba(255,255,255,0.8); /* خلفية سوداء */
-      border: 2px solid #8f8f8f; /* إطار برتقالي */
-      border-radius: 8px;
-      width: 900px; /* أكبر عرض للبطاقة */
-      text-align: center;
-      padding: 20px;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      transition: transform 0.3s;
-    }
-
-    .plan-title {
-      font-size: 1.5rem;
-      color: #FF6600; /* لون العنوان برتقالي */
-      
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    
-    .plan-info {
-      margin-bottom: 15px;
-      line-height: 1.6;
-      color: #000000; /* نص رمادي فاتح */
-    }
-    
-    .plan-price {
-      font-size: 1.2rem;
-      font-weight: bold;
-      color: #FF6600;  
-      margin-bottom: 20px;
-    }
-    
-    .join-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #FF6600;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background-color 0.3s;
-    }
-    .join-btn:hover {
-      background-color: #070706;
-      color: #FF6600;
-      border-radius: 8px;
-    }
-
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>Membership Plans</h1>
-  </header>
-  
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="membership.html" class="active">Membership</a>
-    <a href="courses.html">Courses</a>
-    <a href="about.html">About</a>
-    <a href="login.html" class="login">Login/Register</a>
-  </nav>
-
-  <div class="container">
-    <div class="plans">
-      
+    <div class="container">
+      <div class="plans">
         <!-- Basic Plan -->
-      <div class="plan-card">
-        <div class="plan-title">BASIC</div>
-        <div class="plan-info">
-          <p>2x sessions per week</p>
-          <p>Choose 1 martial art from our program</p>
-          <p>Best choice for beginner who wants to learn</p>
+        <div class="plan-card">
+          <div class="plan-title">BASIC</div>
+          <div class="plan-info">
+            <p>2x sessions per week</p>
+            <p>Choose 1 martial art from our program</p>
+            <p>Best choice for beginner who wants to learn</p>
+          </div>
+          <div class="plan-price">£25/monthly</div>
+          <a href="login.html" class="join-btn">JOIN NOW</a>
         </div>
-        <div class="plan-price">£25/monthly</div>
-        <a href="login.html" class="join-btn">JOIN NOW</a>
-      </div>
-      
-      <!-- Intermediate Plan -->
-      <div class="plan-card">
-        <div class="plan-title">INTERMEDIATE</div>
-        <div class="plan-info">
-          <p>3x sessions per week</p>
-          <p>Choose 1 martial art from our program</p>
-        </div>
-        <div class="plan-price">£35/monthly</div>
-        <a href="login.html" class="join-btn">JOIN NOW</a>
-      </div>
-      
-      <!-- Advanced Plan -->
-      <div class="plan-card">
-        <div class="plan-title">ADVANCED</div>
-        <div class="plan-info">
-          <p>5x sessions per week</p>
-          <p>Any 2 martial arts</p>
-        </div>
-        <div class="plan-price">£45/monthly</div>
-        <a href="login.html" class="join-btn">JOIN NOW</a>
-      </div>
-      
-      <!-- Elite Plan -->
-      <div class="plan-card">
-        <div class="plan-title">ELITE</div>
-        <div class="plan-info">
-          <p>Unlimited classes</p>
-        </div>
-        <div class="plan-price">£60/monthly</div>
-        <a href="login.html" class="join-btn">JOIN NOW</a>
-      </div>
-      
-      <!-- Private Tuition -->
-      <div class="plan-card">
-        <div class="plan-title">PRIVATE TUITION</div>
-        <div class="plan-info">
-          <p>Per Hour</p>
-        </div>
-        <div class="plan-price">£15/hour</div>
-        <a href="login.html" class="join-btn">JOIN NOW</a>
-      </div>
-      
-      <!-- Junior Membership -->
-      <div class="plan-card">
-        <div class="plan-title">JUNIOR MEMBERSHIP</div>
-        <div class="plan-info">
-          <p>All kids martial arts sessions</p>
-        </div>
-        <div class="plan-price">£25/monthly</div>
-        <a href="login.html" class="join-btn">JOIN NOW</a>
-      </div>
 
-      <!-- Update Membership -->
-      <div class="update-card">
-        <div class="plan-title">UPDATE THE MEMBERSHIP</div>
-        <div class="plan-info">
-          <p>Are you already a member and want to upgrade your membership?</p>
+        <!-- Intermediate Plan -->
+        <div class="plan-card">
+          <div class="plan-title">INTERMEDIATE</div>
+          <div class="plan-info">
+            <p>3x sessions per week</p>
+            <p>Choose 1 martial art from our program</p>
+          </div>
+          <div class="plan-price">£35/monthly</div>
+          <a href="login.html" class="join-btn">JOIN NOW</a>
         </div>
-        <a href="login.html" class="join-btn">UPDATE NOW</a>
+
+        <!-- Advanced Plan -->
+        <div class="plan-card">
+          <div class="plan-title">ADVANCED</div>
+          <div class="plan-info">
+            <p>5x sessions per week</p>
+            <p>Any 2 martial arts</p>
+          </div>
+          <div class="plan-price">£45/monthly</div>
+          <a href="login.html" class="join-btn">JOIN NOW</a>
+        </div>
+
+        <!-- Elite Plan -->
+        <div class="plan-card">
+          <div class="plan-title">ELITE</div>
+          <div class="plan-info">
+            <p>Unlimited classes</p>
+          </div>
+          <div class="plan-price">£60/monthly</div>
+          <a href="login.html" class="join-btn">JOIN NOW</a>
+        </div>
+
+        <!-- Private Tuition -->
+        <div class="plan-card">
+          <div class="plan-title">PRIVATE TUITION</div>
+          <div class="plan-info">
+            <p>Per Hour</p>
+          </div>
+          <div class="plan-price">£15/hour</div>
+          <a href="login.html" class="join-btn">JOIN NOW</a>
+        </div>
+
+        <!-- Junior Membership -->
+        <div class="plan-card">
+          <div class="plan-title">JUNIOR MEMBERSHIP</div>
+          <div class="plan-info">
+            <p>All kids martial arts sessions</p>
+          </div>
+          <div class="plan-price">£25/monthly</div>
+          <a href="login.html" class="join-btn">JOIN NOW</a>
+        </div>
+
+        <!-- Update Membership -->
+        <div class="update-card">
+          <div class="plan-title">UPDATE THE MEMBERSHIP</div>
+          <div class="plan-info">
+            <p>Are you already a member and want to upgrade your membership?</p>
+          </div>
+          <a href="login.html" class="join-btn">UPDATE NOW</a>
+        </div>
       </div>
     </div>
-  </div>
-  
-  <div class="social-features">
-    <h3>Join Our Community</h3>
-    <p>Follow us on social media and join our forum to connect with other members.</p>
-    <ul class="social-links">
-      <li><a href="https://facebook.com/yousef2025dubo" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-      <li><a href="https://twitter.com/yousef2025dubo" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
-      <li><a href="https://instagram.com/yousef2025dubo" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-      <li><a href="https://forum.yousef2025dubo.com" target="_blank"><i class="fas fa-comments"></i> Forum</a></li>
-    </ul>
-  </div>
 
-  <footer>
-    &copy; 2025 Yousef Al-Thagbani. All rights reserved.
-  </footer>
+    <div class="social-features">
+      <h3>Join Our Community</h3>
+      <p>
+        Follow us on social media and join our forum to connect with other
+        members.
+      </p>
+      <ul class="social-links">
+        <li>
+          <a href="https://facebook.com/yousef2025dubo" target="_blank"
+            ><i class="fab fa-facebook-f"></i> Facebook</a
+          >
+        </li>
+        <li>
+          <a href="https://twitter.com/yousef2025dubo" target="_blank"
+            ><i class="fab fa-twitter"></i> Twitter</a
+          >
+        </li>
+        <li>
+          <a href="https://instagram.com/yousef2025dubo" target="_blank"
+            ><i class="fab fa-instagram"></i> Instagram</a
+          >
+        </li>
+        <li>
+          <a href="https://forum.yousef2025dubo.com" target="_blank"
+            ><i class="fas fa-comments"></i> Forum</a
+          >
+        </li>
+      </ul>
+    </div>
 
-</body>
+    <footer>&copy; 2025 Yousef Al-Thagbani. All rights reserved.</footer>
+  </body>
 </html>

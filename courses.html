@@ -1,264 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMfXbM7SXUIzYd3IxUjYclGecGk4JJ/Jq3cEkA" crossorigin="anonymous">
-  <meta charset="UTF-8">
-  <title>Dobu Martial Arts - Courses</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMfXbM7SXUIzYd3IxUjYclGecGk4JJ/Jq3cEkA"
+      crossorigin="anonymous"
+    />
+    <meta charset="UTF-8" />
+    <title>Dobu Martial Arts - Courses</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- External CSS -->
-    <link rel="stylesheet" href="css/style.css">
-  <style>
-  
-    :root {
-     --page-bg: url("images/fitness2.png");
-     --page-bg-opacity: 0.9;
-    }
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/courses.css" />
+  </head>
 
-    body::before {
-     content: "";
-     position: fixed;
-     top: 0;
-     left: 0;
-     width: 100%;
-     height: 100%;
-     background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), var(--page-bg) no-repeat center center;
-     opacity: var(--page-bg-opacity);
-     background-size: cover;
-     transition: opacity 1s ease; /* انتقال ناعم */
-     z-index: -1;
-    }
+  <body>
+    <header>
+      <h1>Our Courses</h1>
+    </header>
 
-    @keyframes fadeInDown {
-      from { opacity: 0; transform: translateY(-30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="membership.html">Membership</a>
+      <a href="courses.html" class="active">Courses</a>
+      <a href="about.html">About</a>
+      <a href="login.html" class="login">Login/Register</a>
+    </nav>
 
-    .container {
-      padding: 40px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    
-    /* تنسيق عنصر الكورس */
-    .course {
-      position: relative;
-      background: rgba(255,255,255,0.8);
-      margin-bottom: 30px;
-      border-radius: 8px;
-      overflow: hidden;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      cursor: pointer;
-      transition: transform 0.3s;
-      padding: 20px;
-      border: 5x solid #000000; /* إطار برتقالي */
-    }
-    
-    .course:hover { 
-      transform: scale(1.02); 
-    }
-    
-    /* الخلفية باستخدام pseudo-element لتغطية كامل العنصر */
-    .course::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: var(--bg-url) no-repeat center center;
-      background-size: cover;
-      opacity: 0.8;
-      pointer-events: none;
-      z-index: 0;
-    }
-    
-    /* النصوص فوق الخلفية */
-    .course-summary, .course-details {
-      position: relative;
-      z-index: 1;
-    }
-    
-    /* ملخص الكورس: محاذاة لليسار مع حواف بيضاء */
-    .course-summary {
-      padding: 20px;
-      text-align: left;
-    }
-    
-    .course-summary h2 { 
-      color: #000; 
-      margin-bottom: 10px; 
-      font-size: 30px; 
-      font-weight: 800;
-    }
-    
-    .course-summary p { 
-      color: #333; 
-      line-height: 1.6; 
-      font-weight: 550;
-    }
-    
-    /* تفاصيل الكورس: تبقى مركزة مع حواف بيضاء */
-    .course-details {
-      padding: 20px;
-      background-color: rgba(255,255,255,0.9);
-      display: none;
-      border-top: 1px solid #ddd;
-      text-align: center;
-    }
-    
-    .course-details p { 
-      margin-bottom: 15px; 
-      text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-    }
-    
-    .course-details p strong { 
-      color: #000; 
-    }
-    
-    .register-btn {
-      display: inline-block;
-      padding: 10px 20px;
-      background-color: #FF6600;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background-color 0.3s;
-    }
-
-    /* تنسيق خاص لقسم كورسات الأطفال */
-    .kids-course {
-      border: 1px dashed #FF6600;
-      margin-top: 10px;
-      padding: 10px;
-      border-radius: 4px;
-      text-align: center;
-    }
-    
-    .kids-course h3 {
-      margin-bottom: 10px;
-      color: #FF6600;
-      text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-    }
-
-  </style>
-</head>
-
-<body>
-  <header>
-    <h1>Our Courses</h1>
-  </header>
-  
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="membership.html">Membership</a>
-    <a href="courses.html" class="active">Courses</a>
-    <a href="about.html">About</a>
-    <a href="login.html" class="login">Login/Register</a>
-  </nav>
-  
-  <div class="container">
-    <!-- كورس الكاراتيه -->
-    <div class="course" data-bg="url('images/karate2.png')" onclick="toggleDetails(this)">
-      <div class="course-summary">
-        <h2>Karate</h2>
-        <p>Master the fundamentals of Karate and boost your self-defense skills.</p>
-      </div>
-      <div class="course-details">
-        <p>Learn traditional techniques, forms, and sparring methods under expert guidance. Suitable for all levels.</p>
-        <p><strong>Course Times:</strong> <br>Monday - 17:30 to 19:00<br> Tuesday - 06:00 to 07:30<br> Thursday - 19:00 to 21:00<br> Saturday - 13:00 to 14:30<br> Sunday - 10:30 to 12:00</p>
-      </div>
-    </div>
-    
-    <!-- كورس المواي تاي -->
-    <div class="course" data-bg="url('images/muay2.png')" onclick="toggleDetails(this)">
-      <div class="course-summary">
-        <h2>Muay Thai</h2>
-        <p>Experience the art of eight limbs and intense training sessions.</p>
-      </div>
-      <div class="course-details">
-        <p>Emphasizes powerful strikes, clinch work, and conditioning drills for both fitness enthusiasts and combat training.</p>
-        <p><strong>Course Times:</strong> <br>Monday - 08:30 to 10:00<br> Tuesday - 17:30 to 19:00<br> Friday - 06:00 to 07:30 and 17:30 to 19:00<br> Saturday - 15:00 to 17:00<br></p>
-      </div>
-    </div>
-    
-    <!-- كورس الجيوجيتسو -->
-    <div class="course" data-bg="url('images/jiu2.png')" onclick="toggleDetails(this)">
-      <div class="course-summary">
-        <h2>Jiu-Jitsu</h2>
-        <p>Develop grappling techniques and improve your ground fighting skills.</p>
-      </div>
-      <div class="course-details">
-        <p>Covers submission techniques, guard work, and positional control, ideal for self-defense and competitive training.</p>
-        <p><strong>Course Times:</strong> <br>Monday - 06:00 to 07:30 and 19:00 to 21:00<br> Wednesday - 19:00 to 21:00<br> Thursday - 06:00 to 07:30 and 17:30 to 19:00<br> Friday - 08:00 to 10:00<br> Sunday - 15:00 to 17:00<br></p>
-      </div>
-    </div>
-    
-    <!-- كورس الجودو -->
-    <div class="course" data-bg="url('images/judo2.png')" onclick="toggleDetails(this)">
-      <div class="course-summary">
-        <h2>Judo</h2>
-        <p>Learn throws and joint locks through traditional and competitive judo training.</p>
-      </div>
-      <div class="course-details">
-        <p>Focus on technique, balance, and leverage—an excellent introduction to this dynamic martial art.</p>
-        <p><strong>Course Times:</strong> <br>Monday - 19:00 to 21:00<br> Monday - 06:00 to 07:30 and 17:30 to 19:00<br> Saturday - 10:30 to 12:00<br> Sunday - 13:00 to 14:30<br></p>
-      </div>
-    </div>
-    
-    <!-- كورسات الأطفال -->
-    <div class="course" data-bg="url('images/kids2.png')" onclick="toggleDetails(this)">
-      <div class="course-summary">
-        <h2>Kids Courses</h2>
-        <p>Fun and safe programs designed especially for children.</p>
-      </div>
-      <div class="course-details">
-        <div class="kids-course">
-          <h3>Kids Jiu-Jitsu</h3>
-          <p>Introduce your child to grappling techniques in a supportive environment.</p>
-          <p><strong>Course Times:</strong> <br>Monday and Thursday - 15:00 to 17:00</p>
+    <div class="container">
+      <!-- كورس الكاراتيه -->
+      <div
+        class="course"
+        data-bg="url('../images/karate2.png')"
+        onclick="toggleDetails(this)"
+      >
+        <div class="course-summary">
+          <h2>Karate</h2>
+          <p>
+            Master the fundamentals of Karate and boost your self-defense
+            skills.
+          </p>
         </div>
-        <div class="kids-course" style="margin-top:15px;">
-          <h3>Kids Judo</h3>
-          <p>Teach your child the fundamentals of judo with a focus on discipline and fitness.</p>
-          <p><strong>Course Times:</strong> <br>Tuesday and Friday - 15:00 to 17:00</p>
+        <div class="course-details">
+          <p>
+            Learn traditional techniques, forms, and sparring methods under
+            expert guidance. Suitable for all levels.
+          </p>
+          <p>
+            <strong>Course Times:</strong> <br />Monday - 17:30 to 19:00<br />
+            Tuesday - 06:00 to 07:30<br />
+            Thursday - 19:00 to 21:00<br />
+            Saturday - 13:00 to 14:30<br />
+            Sunday - 10:30 to 12:00
+          </p>
         </div>
-        <div class="kids-course" style="margin-top:15px;">
-          <h3>Kids Karate</h3>
-          <p>Teach your child the fundamentals of judo with a focus on discipline and fitness.</p>
-          <p><strong>Course Times:</strong> <br>Wednesday - 15:00 to 17:00</p>
+      </div>
+
+      <!-- كورس المواي تاي -->
+      <div
+        class="course"
+        data-bg="url('../images/muay2.png')"
+        onclick="toggleDetails(this)"
+      >
+        <div class="course-summary">
+          <h2>Muay Thai</h2>
+          <p>
+            Experience the art of eight limbs and intense training sessions.
+          </p>
+        </div>
+        <div class="course-details">
+          <p>
+            Emphasizes powerful strikes, clinch work, and conditioning drills
+            for both fitness enthusiasts and combat training.
+          </p>
+          <p>
+            <strong>Course Times:</strong> <br />Monday - 08:30 to 10:00<br />
+            Tuesday - 17:30 to 19:00<br />
+            Friday - 06:00 to 07:30 and 17:30 to 19:00<br />
+            Saturday - 15:00 to 17:00<br />
+          </p>
+        </div>
+      </div>
+
+      <!-- كورس الجيوجيتسو -->
+      <div
+        class="course"
+        data-bg="url('../images/jiu2.png')"
+        onclick="toggleDetails(this)"
+      >
+        <div class="course-summary">
+          <h2>Jiu-Jitsu</h2>
+          <p>
+            Develop grappling techniques and improve your ground fighting
+            skills.
+          </p>
+        </div>
+        <div class="course-details">
+          <p>
+            Covers submission techniques, guard work, and positional control,
+            ideal for self-defense and competitive training.
+          </p>
+          <p>
+            <strong>Course Times:</strong> <br />Monday - 06:00 to 07:30 and
+            19:00 to 21:00<br />
+            Wednesday - 19:00 to 21:00<br />
+            Thursday - 06:00 to 07:30 and 17:30 to 19:00<br />
+            Friday - 08:00 to 10:00<br />
+            Sunday - 15:00 to 17:00<br />
+          </p>
+        </div>
+      </div>
+
+      <!-- كورس الجودو -->
+      <div
+        class="course"
+        data-bg="url('../images/judo2.png')"
+        onclick="toggleDetails(this)"
+      >
+        <div class="course-summary">
+          <h2>Judo</h2>
+          <p>
+            Learn throws and joint locks through traditional and competitive
+            judo training.
+          </p>
+        </div>
+        <div class="course-details">
+          <p>
+            Focus on technique, balance, and leverage—an excellent introduction
+            to this dynamic martial art.
+          </p>
+          <p>
+            <strong>Course Times:</strong> <br />Monday - 19:00 to 21:00<br />
+            Monday - 06:00 to 07:30 and 17:30 to 19:00<br />
+            Saturday - 10:30 to 12:00<br />
+            Sunday - 13:00 to 14:30<br />
+          </p>
+        </div>
+      </div>
+
+      <!-- كورسات الأطفال -->
+      <div
+        class="course"
+        data-bg="url('../images/kids2.png')"
+        onclick="toggleDetails(this)"
+      >
+        <div class="course-summary">
+          <h2>Kids Courses</h2>
+          <p>Fun and safe programs designed especially for children.</p>
+        </div>
+        <div class="course-details">
+          <div class="kids-course">
+            <h3>Kids Jiu-Jitsu</h3>
+            <p>
+              Introduce your child to grappling techniques in a supportive
+              environment.
+            </p>
+            <p>
+              <strong>Course Times:</strong> <br />Monday and Thursday - 15:00
+              to 17:00
+            </p>
+          </div>
+          <div class="kids-course" style="margin-top: 15px">
+            <h3>Kids Judo</h3>
+            <p>
+              Teach your child the fundamentals of judo with a focus on
+              discipline and fitness.
+            </p>
+            <p>
+              <strong>Course Times:</strong> <br />Tuesday and Friday - 15:00 to
+              17:00
+            </p>
+          </div>
+          <div class="kids-course" style="margin-top: 15px">
+            <h3>Kids Karate</h3>
+            <p>
+              Teach your child the fundamentals of judo with a focus on
+              discipline and fitness.
+            </p>
+            <p>
+              <strong>Course Times:</strong> <br />Wednesday - 15:00 to 17:00
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Specialist Courses & Fitness Training -->
+      <div
+        class="course"
+        data-bg="url('../images/fitness2.png')"
+        onclick="toggleDetails(this)"
+      >
+        <div class="course-summary">
+          <h2>Specialist Courses &amp; Fitness Training</h2>
+          <p>
+            Advanced programs designed for specialized needs and overall fitness
+            improvement.
+          </p>
+        </div>
+        <div class="course-details">
+          <p>
+            <strong>Six-week Beginners’ Self-Defence Course</strong><br />
+            (2 × 1-hour session per week) – £180.00 monthly fee
+          </p>
+          <p><strong>Use of Fitness Room</strong> – per visit: £6.00</p>
+          <p><strong>Personal Fitness Training</strong> – per hour: £35.00</p>
         </div>
       </div>
     </div>
-    
-    <!-- Specialist Courses & Fitness Training -->
-    <div class="course" data-bg="url('images/fitness2.png')" onclick="toggleDetails(this)">
-      <div class="course-summary">
-        <h2>Specialist Courses &amp; Fitness Training</h2>
-        <p>Advanced programs designed for specialized needs and overall fitness improvement.</p>
-      </div>
-      <div class="course-details">
-        <p><strong>Six-week Beginners’ Self-Defence Course</strong><br>
-           (2 × 1-hour session per week) – £180.00 monthly fee</p>
-        <p><strong>Use of Fitness Room</strong> – per visit: £6.00</p>
-        <p><strong>Personal Fitness Training</strong> – per hour: £35.00</p>
-      </div>
-    </div>
-  </div>
-  
-  <div class="social-features">
-    <h3>Join Our Community</h3>
-    <p>Follow us on social media and join our forum to connect with other members.</p>
-    <ul class="social-links">
-      <li><a href="https://facebook.com/yousef2025dubo" target="_blank"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-      <li><a href="https://twitter.com/yousef2025dubo" target="_blank"><i class="fab fa-twitter"></i> Twitter</a></li>
-      <li><a href="https://instagram.com/yousef2025dubo" target="_blank"><i class="fab fa-instagram"></i> Instagram</a></li>
-      <li><a href="https://forum.yousef2025dubo.com" target="_blank"><i class="fas fa-comments"></i> Forum</a></li>
-    </ul>
-  </div>
-  
-  <footer>
-    &copy; 2025 Yousef Al-Thagbani. All rights reserved.
-  </footer>
-  
-  <script src="js/script.js"></script>
 
-</body>
+    <div class="social-features">
+      <h3>Join Our Community</h3>
+      <p>
+        Follow us on social media and join our forum to connect with other
+        members.
+      </p>
+      <ul class="social-links">
+        <li>
+          <a href="https://facebook.com/yousef2025dubo" target="_blank"
+            ><i class="fab fa-facebook-f"></i> Facebook</a
+          >
+        </li>
+        <li>
+          <a href="https://twitter.com/yousef2025dubo" target="_blank"
+            ><i class="fab fa-twitter"></i> Twitter</a
+          >
+        </li>
+        <li>
+          <a href="https://instagram.com/yousef2025dubo" target="_blank"
+            ><i class="fab fa-instagram"></i> Instagram</a
+          >
+        </li>
+        <li>
+          <a href="https://forum.yousef2025dubo.com" target="_blank"
+            ><i class="fas fa-comments"></i> Forum</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <footer>&copy; 2025 Yousef Al-Thagbani. All rights reserved.</footer>
+
+    <script src="js/script.js"></script>
+  </body>
 </html>
