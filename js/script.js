@@ -43,17 +43,24 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 
-  // ========== 3) التحقق من بيانات نموذج تسجيل الدخول + إعادة توجيه ==========
-  const loginFormEl = document.getElementById("loginForm");
-  if (loginFormEl) {
-    loginFormEl.addEventListener("submit", function(e) {
-      e.preventDefault();
-      // هنا يمكنك إضافة تحقق بسيط إن رغبت
-      alert("تم تسجيل الدخول بنجاح!");
-      // إعادة التوجيه إلى صفحة تحديث العضوية
-      window.location.href = "update.html";
-    });
-  }
+// ========== 3) التحقق من بيانات نموذج تسجيل الدخول + إعادة توجيه ==========
+const loginFormEl = document.getElementById("loginForm");
+if (loginFormEl) {
+  loginFormEl.addEventListener("submit", function(e) {
+    e.preventDefault();
+    // استخدم المعرف الصحيح "loginEmail"
+    const email = document.getElementById("loginEmail").value; 
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!emailRegex.test(email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+    alert("تم تسجيل الدخول بنجاح!");
+    // إعادة التوجيه إلى صفحة تحديث العضوية
+    window.location.href = "update.html";
+  });
+}
 
 }); // نهاية DOMContentLoaded
 
