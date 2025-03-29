@@ -10,8 +10,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    var(--page-bg) no-repeat center center;
+  background: var(--page-bg) no-repeat center center;
   opacity: var(--page-bg-opacity);
   background-size: cover;
   transition: opacity 1s ease; /* انتقال ناعم */
